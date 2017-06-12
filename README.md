@@ -21,6 +21,28 @@ In this example, the second console.log() will print undefined, because the 'nam
 
 #### Hoisting:
 
+printName();
+
+function printName(){
+
+  var name = 'Michael';
+  console.log(name);
+}
+
+In this example, the function printName() can be called at the top of the page because JavaScript hoists the declaration to the top of the page.  Because of this, once the program reaches "printName()", it is already defined.
 
 
 #### Compartmentalization:
+
+var firstnumber = 6;
+var secondnumber = 4;
+
+somePreviouslyDefinedFunction();
+someOtherFunction();
+
+function doMath(){
+  var sum = firstnumber + secondnumber
+  return sum;
+}
+
+This example does not follow compartmentalization, because the two variables are defined at the top of the program, before they're even used.  It would be better to declare the variables within the function, to reduce the likelihood they would be changed elsewhere.
